@@ -1,0 +1,559 @@
+:root{
+    --gamePictureSide: clamp(30px, calc(11px + 1.5vmax + 2vh ), 70px);
+    --boardBoxes:url("../resources/pictures/gamePage/boardGame/hole.png");
+    --boardBoxImg:url("../resources/pictures/gamePage/boardGame/boardBox.jpg");
+    --colorsContainerBox: url("../resources/pictures/gamePage/boardGame/colourContainer.jpg");
+    --roundBg: url("../resources/pictures/gamePage/boardGame/black.png");
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: var(--font);
+}
+
+/*Background picture*/
+body{
+    background-image: var(--gameImg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0;
+    min-width: 900px;
+    min-height: 500px;    
+}
+
+/* -- PAGE GRIDLAYOUT -- */
+#pageContent{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 5% 95%;
+}
+header{
+    grid-column: 1/ span 3;
+}
+
+/*------------------HEADER ELEMENTS-------------*/
+header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/* 1 - BUTTONS: Menu and reset*/
+#mainButtons{ /*Button container*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+    min-width: 300px;
+}
+.buttonElement, #backToPanel{ /*Button div + back button (at end of the game)*/
+    width: 15vw + 5vh;
+    min-width: 60px;
+    max-width: 200px;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+.menuButton{
+    width: 100%;
+    height: max(3.5vh, 40px);
+    /*Font*/
+    font-size: calc(20% + 2vw + 1vh);
+}
+
+/* 2 - CUSTOMITATION: Sound and color blind*/
+/* -- COLOR BLIND SECTION --*/
+#headerRight{ /*Div container*/
+    width: 50%;
+    min-width: 300px;
+    display: flex;
+    flex-direction:row-reverse;
+}
+#switch{ /*Element visualized on screen container*/
+    /*Order and position*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: max(1%, 5px);
+    justify-content: center;
+    align-items: center;
+    margin-right: 1%;
+    margin-top: 1%;
+    /*Colour and shape*/
+    background-color: #3B3B3B;
+    border: 3px solid black;
+    border-radius: 10px;
+    width: calc(10% + 15vmax);
+    min-width: 250px;
+    /*height: clamp(31px, 80%, 40px);*/
+    height: max(3.5vh, 40px);    
+}
+
+/*Text element*/
+#leftSwitch{ /*Text element in div*/
+    color: white;
+    font-family: var(--font);
+    font-weight: bolder;
+}
+#colorBlindText{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: max(1.25vmax, 125%);
+}
+/*Buttons*/
+.toolButton{ /*Buttons container class (sound and colour blind)*/
+    height: max(3.5vh, 40px);    
+    width: clamp(45px, 20%, 80px);
+}
+.panelButton{/*Buttons class (sound and colour blind)*/
+    width: 100%;
+    height: 100%;
+}
+
+/*Button style*/
+#colorBlindButton{
+    background-color: red;
+    border: 1px solid black;
+    font-family: var(--font);
+    font-size: max(1.25vmax, 125%);
+    font-weight: bolder;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#colorBlindButton:hover{
+    border-color: #FFC745;
+    color:  #FFC745;
+}
+
+#colorBlindButton:active {
+    transform: scale(.9);
+}
+
+/*-- SOUND BUTTON --*/
+#soundButton{ /*overwrite properties from generalStyle.css */ 
+    position: relative !important;
+    float: none !important;
+    border: 1px solid black;
+    border-radius: 15px !important;
+    min-height: unset !important;
+    min-width: unset !important;
+}
+#soundButton img{
+    min-width: 20px;
+}
+
+#soundButton:hover{
+    border-color: #FFC745;
+    background-color: #FFC745 !important;
+}
+
+#soundButton:active {
+    transform: scale(.9);
+}
+
+
+/*-- SELECTED COLOUR BOX--*/
+#selectedColourContainer{
+    /*Dimensions*/
+    width: 32px; /*real img side height/width*/
+    height: max(3.5vh, 40px); /*equal to switch container*/
+    /*Display*/
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+    margin-right: 1%;
+    padding-right: 1%;
+    padding-left: 1%;
+    /*Shape and colour*/
+    background-color: #3B3B3B;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+
+/*------------------LEFT SIDEBAR ELEMENTS-------------*/
+#sideBarLeft{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    min-width: 75px; 
+}
+
+/* -- COLOR SELECTION PALETTE -- */
+#colorsContainer{ /*Outside box*/
+    padding: 5%;
+    /*Position*/
+    position: relative;
+    margin: 0 auto;
+    /*Box colours*/
+    background-image: var(--colorsContainerBox);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 15px;
+    width: calc(50px + 3.5vmax);
+}
+#colors .color{
+    cursor: pointer; 
+}
+/*Colors selection panel*/
+/* colours in palette and gamer box*/
+.color, .colorImg{
+    height: calc(50px + 3.5vmax);
+    width: calc(50px + 3.5vmax);
+}
+
+
+
+/*------------------RIGHT SIDEBAR ELEMENTS-------------*/
+/*-- MAIN STATISTICS (CHRONOMETER AND ROUND COUNTER) --*/
+#sideBarRight{
+    display: grid;
+    grid-template-rows: 20% 80%;
+    justify-content: center;
+    min-width: 75px;    
+}
+#mainStats{
+    color: white;
+    position: relative;
+    font-size: max(1.2vmax, 170%);
+    font-family: var(--font);
+    font-weight: bolder;
+    margin-top: max(20%, 50px);
+    width: 100%;
+    display: flex;
+    text-align: left;    
+    flex-direction: column;
+}
+.statElement{
+    margin-left: 20%;
+}
+.statElement p{
+    margin-top: 1%;
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+
+/*----------- GAME BUTTONS SECTION -------------*/
+#gameButtonsSection{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-width: 100px;
+    margin-top: 10%;
+}
+#gameButtonColumn{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vmax;    
+    align-content: center;
+    justify-content: center;   
+    flex-direction: column; 
+}
+
+/*Delete and check buttons*/
+.gameButton{
+    /*Position and size (height = width)*/
+    position: relative;
+    width: calc(75px + 5vh + 5vw);
+    height: calc(75px + 5vh + 5vw);
+    max-height: 200px;
+    max-width: 200px;    
+    /*Center text*/
+    text-align: center; 
+    line-height: 0px; 
+    /*Border*/
+    border-radius: 50%;   
+    border: 5px black solid;
+    /*Colour*/
+    background-color: #9C1F00;
+    /*Font*/
+    font-family: var(--font);
+    font-weight: bolder;
+    font-size: calc(50% + 2vmax);
+    /*font-size: max(1.75vmax, 175%);*/
+    color: black;
+    /*Others*/
+    cursor: pointer;    
+    z-index: 1;
+}
+
+/*Buttons animation*/
+.gameButton:hover:enabled{
+    background-color: #FF3400;
+    color: #FFC745;
+    border-color: #FFC745;
+    transition: all .5s ease;
+    transform: scale(1.1);
+}
+.gameButton:active:enabled {
+    transform: scale(.9);
+}
+.gameButton:enabled::before {
+    content: '';
+    inset: 0 0 0 0;
+    margin: auto;
+    height: 0px;
+    width: 0px;    
+    position: absolute;
+    background-color: #FF3400;
+    z-index: -1;
+    border-radius: 50%;
+    transition: all .4s ease;
+}
+.gameButton:hover:before {
+    height: 100%;
+    width: 100%;    
+}
+
+
+/*------------------MAIN (CENTRAL) ELEMENTS-------------*/
+#points{
+    position: absolute;
+}
+
+#screenCenter{
+    display: flex;
+    justify-content: center;
+    min-width: 500px; 
+    align-items: center;
+}
+
+
+
+/*----------- GAME BOARD SECTION -------------*/
+#game {
+    width: calc(var(--gamePictureSide)*10);
+    min-width: 420px; /*min-widht of parent element*/    
+    /*Center and position*/
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Game box (coloured part)*/
+#gameBox{
+    /*Dimensions*/
+    height: 100%;
+    width: 100%;
+    padding: 2%;
+    /*Colour*/
+    border-radius: 10px;    
+    background-image: var(--boardBoxImg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /*Grid for board content*/
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto calc(var(--gamePictureSide)*2); /*roundBoxes + boxes*/
+}
+
+/*Board screen:  id-roundBoxe (small boxes for the 10 rounds) + id-boxes (bottom boxes to place colours)*/
+#roundBoxes{
+    position: relative;
+    margin-left: var(--gamePictureSide); /*Width of the points container (which stays invisible until the end of every round)*/
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+/*--GAMER ROUND (playing box (4 colours)) --*/
+#boxes {    
+    /*Form*/
+    width: 100%;
+    height: 100%;    
+    /*display and position*/
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#boxes .box{
+    /*Display*/    
+    margin: 0;
+    width: calc(var(--gamePictureSide)*1.8);
+    max-width: 25%;
+    height: calc(var(--gamePictureSide)*1.8);    
+    max-height: 100%;
+    /*Background*/
+    background-image: var(--roundBg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#boxes .color{
+    position: relative;
+}
+#boxes .box img{
+    width: calc(var(--gamePictureSide)*1.8);
+    height: calc(var(--gamePictureSide)*1.8)
+}
+/* -- ROUND POINTS -- */
+#points {
+    /*Dimensions*/  
+    width: calc(var(--gamePictureSide)*4); /*4 puntuations */
+    height: calc(var(--gamePictureSide)*10); /*10 rounds -> x10*/    
+}
+/*Point container (div with 4 points / round)*/
+.points{
+    display: flex;
+    flex-wrap: wrap;    
+    width: var(--gamePictureSide); /*width of the 4 points*/
+    height: var(--gamePictureSide);
+    position: relative;    
+    transform: rotate(180deg);
+    
+}
+/*point img container */
+.pointImg{
+    display: inline-block;  
+    height: calc(var(--gamePictureSide)/2); 
+    width: 50%;
+}
+/*img*/
+.points img{
+    height: calc(var(--gamePictureSide)/2); /*dimensions: half size of the picture in round*/
+    width: calc(var(--gamePictureSide)/2);
+    transform: rotate(180deg);
+}
+
+/*-- END GAME WINDOW --*/
+#winnerContainer{
+    /* Dimensions and positioning*/  
+    position: absolute;    
+    height: 35vmax;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*Colour*/  
+    background-color: var(--boxBg);    
+    border: var(--frame1) solid 3px;    
+    border-radius: 10%;    
+    color: white;   
+    font-family: var(--font);
+}
+#winner{
+    /* Dimensions and positioning*/  
+    position: relative;    
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5%;
+    display: grid;
+    grid-template-rows: 95% 5%;
+}
+ 
+/*Winner fonts*/
+#winner h1{
+    font-size: calc(1.6rem + 1vh);
+    margin-top: 0;
+    
+}
+#winner h2{
+    font-size: calc(1.35rem + 1vh);
+    margin-top: 0;
+    
+}
+#winner h3{
+    font-size: calc(1.15rem + 1vh);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#winner p{
+    font-size: calc(1rem + 1vh);
+    margin-top: 0;
+}
+#totalPoints{
+    margin-bottom: 0;
+}
+/*Buttons*/
+#winnerButtons{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;    
+    gap: 5%;
+}
+.winnerButton{
+    width: 40%;    
+}
+.winnerButton .menuButton{
+    font-size: calc(20% + 1.5vw + 0.5vh) !important;
+}
+
+/*Close window button*/
+#closeVictoryWindow{
+    /*Position*/
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    /*Colour*/
+    color: #9C1F00;
+    background-color: transparent;
+    border: none;
+    /*Font*/
+    font-weight: bolder;
+    font-size: 175%;
+    font-family: 'Trebuchet MS' !important;
+}
+#closeVictoryWindow:hover{
+    color: #FF3400;
+}
+#solutionContainer{
+    text-align: center;
+}
+.solutionColour{
+    height: var(--gamePictureSide);
+    width: var(--gamePictureSide);
+}
+
+
+#result{
+    text-align: center;
+}
+
+/*-- ROUND BOXES --*/
+.round{
+    /*Center*/
+    position: relative;   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.round .roundBox{
+    height: var(--gamePictureSide);
+    width: var(--gamePictureSide);
+    /*Position*/
+    display: inline-block; 
+    overflow: hidden;  
+    margin-right: 1%;  
+    margin-left: 1%;
+    /*Background and border*/
+    background-image: var(--boardBoxes);
+    background-size: 100% 100%;
+    border: 2px black solid;
+    border-radius: 50%;
+}    
+.round .roundBox .color{
+    height: var(--gamePictureSide);
+    width: var(--gamePictureSide);
+}
+
+.round .roundBox img{
+    height: var(--gamePictureSide);
+    width: var(--gamePictureSide);
+}
+

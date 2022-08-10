@@ -1,0 +1,95 @@
+/*Whole page*/
+body, html{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: var(--font);
+}
+body{
+    margin: 0;
+    background-image:var(--menuImg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*Main container*/
+#container{
+    /*Position - center vertically*/
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    /*Size*/    
+    width: clamp(400px, 50%, 900px);   
+    /*Center horizontally*/
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    /*Color*/
+    color: white;   
+    /*Background box*/
+    background-color: var(--boxBg);
+    border: 3px solid black;
+    border-radius: 15px;
+}
+
+/* Page content */
+#content{
+    /*Size and position*/
+    position: relative;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+    /*Center content*/
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-content: center; 
+    text-align: center;   
+    padding-bottom: 5%;
+}
+
+#container input[type="text"], #container input[type="email"]{
+    width: max(50%, 350px);
+    height: var(--inputHeight);
+    border-radius: 5px;
+    font-size: calc(1.1rem + 1vh);
+}
+
+
+/*Buttons*/
+.menuButton{
+    width: max(50%, 350px);
+    height: max(4vh, 50px);
+    /*Font*/
+    font-size: max(2vmax, 200%);
+}
+
+
+/*fonts*/
+h2{
+    font-size: calc(1.8rem + 1vh);
+}
+p, label{
+    font-size: calc(1.1rem + 1vh);
+}
+.codeText{
+    text-align: justify;
+}
+a{
+    color:var(--main2);
+    font-size: calc(1.1rem + 1vh);  
+}
+
+/*Password fields, specific settings*/
+.passwordElement{
+    width: max(50%, 350px) !important;
+    margin: 0 auto;
+}
+
+/*Error messages*/
+#newPassVerif, .dbError, .error{
+    color: red;
+    font-size: calc(1.1rem + 1vh) !important;
+    font-weight: bolder;
+}

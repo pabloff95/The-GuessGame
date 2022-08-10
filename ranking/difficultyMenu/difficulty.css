@@ -1,0 +1,63 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: var(--font);
+}
+/*Background picture*/
+body{
+    background-image: var(--menuImg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0;
+}
+
+/*Content container*/
+#container{
+    width: 100%;
+    /*Position*/
+    position: relative;
+    top: 10%;
+    height: max(80%, 550px);    
+}
+/* Page content */
+#content{
+    /*Size and position*/
+    position: relative;
+    height: max(90%, 510px);
+    width: max(90%, 510px);
+    top: 5%;  
+    left: 5%;  
+    /*Center content*/
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-content: center; 
+    text-align: center;
+}
+/* <h1> */
+#content h1{
+    /*Font*/
+    color: white;   
+    font-family: var(--font);
+    font-size: max(3.5vmax, 275%);
+}
+
+/*Buttons*/
+.menuButton{
+    width: max(35%, 500px);
+    height: max(6vh, 70px);
+    margin:auto;    
+    /*Font*/
+    font-family: var(--font);
+    font-size: max(3vmax, 250%);
+    /*Force text in 1 line*/
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#content form{
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+

@@ -1,0 +1,116 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: var(--font);
+}
+/*Background picture*/
+body{
+    background-image: var(--menuImg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0;
+}
+
+/*Content container*/
+#container{
+    /*Color*/
+    color: white;   
+    /*Position - center vertically*/
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    /*Size*/    
+    width: clamp(700px, 60%, 900px);   
+    height: clamp(550px, 80%, 750px);   
+    /*Center horizontally*/
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Page content */
+#content{
+    /*Size and position*/
+    position: relative;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+    /*Center content*/
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-content: center; 
+    text-align: center;
+}
+
+/*Buttons*/
+.menuButton{
+    /*width: max(35%, 500px);*/
+    width: max(35%, 30vmax);
+    min-width: 550px;
+    height: max(6vh, 70px);
+    margin:auto;    
+    /*Font*/
+    font-family: var(--font);
+    font-size: max(3vmax, 250%);
+    /*Force text in 1 line*/
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/*Form inputs*/
+form input[type="text"], form input[type="email"]{
+    width: max(35%, 500px);
+    height: max(3vh, 35px);
+    border-radius: 5px;
+    font-family: var(--font);
+    font-size: max(1.5vmax, 135%);
+    padding: 0;
+    color: black;
+}
+/*specific settings for password field (see generalStyle.css)*/
+.passwordElement{
+    width: max(35%, 500px) !important;
+    margin: 0 auto;
+}
+
+form label{
+    font-family: var(--font);
+    font-size: max(1.5vmax, 150%);
+    color: white;
+}
+h1{
+    font-family: var(--font);
+    font-size: max(2vmax, 200%);
+}
+
+/*Error message*/
+.errorMessage{
+    color: red;
+    font-family: var(--font);
+    font-size: max(1.5vmax, 150%);
+    font-weight: bolder;
+}
+
+#content form{
+    margin-top: 0.1%;
+    margin-bottom: 0.1%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

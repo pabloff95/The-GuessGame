@@ -1,0 +1,79 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: var(--font);
+}
+/*Background picture*/
+body{
+    background-image: var(--menuImg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0;
+}
+/*Content container*/
+#container{
+    /*Position - center vertically*/
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    /*Size*/    
+    /*width: calc(50% + 21vmax);     */
+    min-width: 700px;
+    /*Center horizontally*/
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    /*Color*/
+    color: white;   
+}
+
+/* Page content */
+#content{
+    /*Size and position*/
+    position: relative;
+    /*Center content*/
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-content: center; 
+    text-align: center;
+    /*Colour and shape*/
+    background-color: var(--boxBg);
+    border: 3px solid black;
+    border-radius: 15px;
+    /*Padding*/
+    padding: 2%;
+}
+/*Title*/
+#content h1{
+    font-size: calc(1.8rem + 1vmax);
+}
+
+/*Table*/
+table{
+    font-size: calc(1.1rem + 0.6vw + 0.3vh);
+    /*Borders*/
+    border-spacing:0; 
+    border-collapse: collapse; 
+}
+table th:first-child {
+    text-align: left;
+    width: 20%;
+    white-space: nowrap;
+    border-right: white 2px solid;
+}
+table #topRow{
+    border-bottom: white 2px solid;
+}
+table td{
+    padding-top: min(0.5vmax, 10px);
+    padding-bottom: min(0.5vmax, 10px);
+}
+/*button*/
+.menuButton{
+    width: max(20%, 350px);
+    height: max(4vh, 50px);
+    /*Font*/
+    font-size: max(2vmax, 200%);
+}

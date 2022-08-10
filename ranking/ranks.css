@@ -1,0 +1,133 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: var(--font);
+}
+/*Background picture*/
+body{
+    background-image: var(--menuImg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0;
+}
+
+#container{
+    /*Position - center vertically*/
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    /*Size*/    
+    width: clamp(700px, 60%, 900px);   
+    max-height: 99%;
+    /*Center horizontally*/
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    /*Color*/
+    color: white;   
+    /*Background box*/
+    background-color: var(--boxBg);
+    border: 3px solid black;
+    border-radius: 15px;
+}
+
+/* Page content */
+#content{
+    /*Size and position*/
+    position: relative;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+    margin-bottom: 2.5%;
+    /*Center content*/
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-content: center; 
+    text-align: center;
+}
+
+/*Text input*/
+input[type="text"]{
+    width: max(25%, 250px);
+    height: max(3vh, 35px);
+    border-radius: 5px;
+    font-size: calc(1.1rem + 1vh);
+    padding: 0;
+    color: black;
+}
+
+/*Main Table*/
+table{
+    width: max(80%, 600px);
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+}
+
+table th{
+    font-size: calc(1.1rem + 1vh);
+    
+}
+table td{
+    font-size: calc(1.1rem + 1vh);
+    width: calc(100%/3);    
+}
+
+/* Menu button */
+.menuButton{
+    margin-top: 0.5%;
+    width: max(25%, 250px);
+    height: max(4vh, 50px);
+    /*Font*/
+    font-size: max(2vmax, 200%);
+}
+#menuButton{
+    width: max(20%, 350px) !important;
+}
+/* Searched user*/
+.userField{
+    color: red;
+    font-size: calc(1.1rem + 1vh);
+    font-weight: bold;
+}
+
+/*Navigation buttons and Change difficulty buttons*/
+#navContainer{
+    width: 100%;
+}
+#navContainer form{
+    display: inline-block;   
+    width: max(40%, 300px); 
+}
+
+.navButton, .changeDiffButton{
+    width: 100%;
+    padding: 1.5%;
+    background-color: gray;            
+    border-radius: 10px;        
+    font-weight: bolder;
+    font-size: calc(1.1rem + 1vh);
+    color: var(--frame1);
+    border: 3px solid var(--frame1);  
+}
+.navButton:hover, .changeDiffButton:hover{
+    background-color: var(--contrast1);    
+}
+/*Change difficulty*/
+#title{
+    position: relative;
+}
+
+h1{
+    font-size: calc(1.8rem + 1vh);
+}
+#title form, #title h1{    
+    display: inline-block !important;   
+}
+
+.changeDiffButton{
+    width: auto !important;
+    border-radius: 5px !important;
+}

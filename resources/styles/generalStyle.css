@@ -1,0 +1,118 @@
+/*General style properties of the whole website*/
+:root{
+    /*Background pictures*/
+    --titleImg:url("/guessgame/resources/pictures/backgrounds/title.jpg"); /* Picture for title and login pages */
+    /*--menuImg:url("/guessgame/resources/pictures/backgrounds/test3.svg"); /* Picture for menu and the other menu pages */
+    --menuImg:url("/guessgame/resources/pictures/backgrounds/title.jpg"); /* Picture for menu and the other menu pages */
+        /*SVG parameters for covering 100% background: <svg  width="100%" height="100%" viewBox="0 0 950 600" preserveAspectRatio="none">*/
+    --gameImg: url("/guessgame/resources/pictures/backgrounds/backgroundGame.png"); /* Picture for game background */
+    /*Other pictures*/
+    --logoBGPicture:url("/guessgame/resources/pictures/other/logo.png"); /* Logo picture (with background) */
+
+    /*Font*/
+    --font: 'Courier New', Courier, monospace; /* Font family style*/
+    /*Colours*/
+        /*Main colour used (e.g.: background buttons)*/
+    --main1: #49F2BF;
+    --main2: #39BF97;
+    --main3: #22735B;   
+    --main4: #007551;    
+    --main5: #93F4D7; 
+        /*Boxes background (e.g.: login box background color)*/
+    --boxBg: #414141;
+        /*Main delimiting colour used (e.g.: button borders)*/
+    --frame1:#00120D;
+    --frame2: #003629;
+        /*Main contrast colour used (e.g.: when hover:button)*/
+    --contrast1:#FFC745;
+    /*inputs height*/
+    --inputHeight: max(3vh, 35px)
+}
+
+body button, body input[type="submit"]{
+    cursor: pointer;
+}
+
+/* Sound button controller (mute or play sounds) */
+#soundButton{
+    background-color: white;
+    position: absolute;
+    right: 0;
+    /*Responsive size*/
+    min-width: max(4%, 50px);
+    min-height: max(2%, 25px);
+}
+#soundButton img{
+    width: max(50%, 25px);    
+}
+#soundButton:hover{
+    background-color: var(--contrast1);
+}
+
+/*JS Input validation error messages style */
+.error{
+    color: red;
+    font: var(--font);
+    font-size: 110%;
+    font-weight: bolder;
+}
+
+
+/*-------------------PASSWORD FIELDS + EYE IMG ----------------------------------------------*/
+/*paswwordElemetn: div with password input and "eye" img*/
+.passwordElement{
+    /*Copy input colour and shape*/
+    background-color: white;
+    border: 1px black solid;
+    border-radius: 5px;
+    height: var(--inputHeight);
+    margin-left: 1%;
+    color: black;
+    /*Display elemetns in the same line*/
+    display: flex;
+    flex-direction: row;
+}
+/*Custom all input fields focus animation*/
+input[type="text"]:focus, input[type="email"]:focus{
+    outline:solid 4px var(--contrast1);
+    outline-offset: -4px;
+}
+.passwordField:focus {
+    outline: none !important;
+}
+.passwordElement:focus-within{
+    outline:solid 4px var(--contrast1);
+    outline-offset: -4px;
+}
+/*passwordField: input type='password' (text when showing password) */
+.passwordField{
+    width: 90% !important;
+    font-size: max(1.5vmax, 135%);
+    border-radius: 5px;
+    border: none;
+    padding: 0;
+    font-family: var(--font);    
+    margin-left: 0 !important;
+}
+.passImg{
+    width: 9%;
+    margin-left: 1%;
+}
+/*----------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
