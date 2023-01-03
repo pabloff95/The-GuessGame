@@ -9,7 +9,7 @@ body, html, #container{
     width: 100%;
     overflow: hidden;
     font-family: var(--font);
-    min-width: 800px;   
+    min-width: 400px;   
 }
 body{
     margin: 0;
@@ -183,7 +183,7 @@ p, a, label{
     font-size: max(2vmax, 200%);
 }
 
-#login .menuButton{
+.menuButton{
     width: 98% !important;
     margin-left: 1% !important;
 }
@@ -212,7 +212,90 @@ p, a, label{
 }
 
 
+/*----------------------- RESPONSIVE DESIGN --------------------------------*/
+/*Tablets and small devices*/
+/*@media all and (max-width:1024px){
 
+}*/
+
+/*Phones*/
+@media all and (max-width:768px) {
+    h1{
+        margin: 2.5% auto;
+        font-size: calc(1.25em + 1.5vw);
+    }
+    /* ------ Set containers in vertical and in the center -----*/
+    #container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+    }
+    #leftForm, #rightForm{
+        float: unset;    
+    }
+    .logForm{
+        all: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 80%;
+    }
+    #loginFrame, #playContainer{
+        left: unset;
+        top: unset;
+        transform: unset;
+    }
+    /*--- Form to play without being logged*/
+    #leftForm{
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    #logo{
+        left: unset;
+        top: unset;
+        transform: unset;
+        width: unset;
+        height: 10vh;
+    }
+    #playContainer{
+        width: 80%;
+        padding: 2%;
+    }
+    #playFrame{
+        width: 100%;
+        height: 100%;        
+    }
+    /*--- Form to play as logged user */
+    #rightForm{
+        margin-top: 20%; /*10% from top form to middle bar + 10% from middle bar to bottom form*/
+    }
+    #loginFrame{
+        width: 80%;
+    }
+    #login{
+        all: unset;
+        padding: 2% 1%;
+    }
+    #createAccount{
+        margin: 0;
+    }
+
+    /*--- Middle bar*/
+
+    #middle-column{
+        display: none;
+    }
+    #playContainer::after{
+        position: absolute;
+        margin-top: 10%;
+        content: "";
+        height: 5%;
+        width: 100%;
+        border-radius: 10px;
+        background-color: var(--frame1);
+    }    
+}
 
 
 
