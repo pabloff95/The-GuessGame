@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
         <title>GuessGame</title>     
         <link rel="stylesheet" type="text/css" href="../resources/styles/generalStyle.css">    
         <link rel="stylesheet" type="text/css" href="../resources/styles/menuButton.css">
@@ -51,18 +52,18 @@
         <div id="container">
             <div id="content">
         <form action="../game/difficultyMenu/difficulty.php" method="POST">
-            <button type="button" class="menuButton">PLAY</button>
+            <button type="button" class="menuButton mainMenuButton">PLAY</button>
             <input type='hidden' name='toDiff'>
             <?php printSoundHiddenInput(); ?>
         </form>
         <form method="POST" action="../howtoplay/howtoplay.php">
-            <button type="button" class="menuButton">HOW TO PLAY</button>
+            <button type="button" class="menuButton mainMenuButton">HOW TO PLAY</button>
             <input type='hidden' name='toRules'>
             <input type='hidden' name="sound" class="soundTracker">
             <?php printSoundHiddenInput(); ?>
         </form>
         <form action="../ranking/difficultyMenu/difficulty.php" method="POST">
-            <button type="button" class="menuButton">RANKING</button>
+            <button type="button" class="menuButton mainMenuButton">RANKING</button>
             <input type='hidden' name='toRanks'>
             <input type='hidden' name="sound" class="soundTracker">
             <?php printSoundHiddenInput(); ?>
@@ -70,23 +71,23 @@
         <?php 
         if ($session){
             echo "<form action='../myscore/myscore.php' method='POST'>
-                    <button type='button' class='menuButton'>MY SCORE</button>";
+                    <button type='button' class='menuButton mainMenuButton'>MY SCORE</button>";
                     printSoundHiddenInput();
             echo "</form>";     
             echo "<form action='../account/account.php' method='POST'>
-                        <button type='button' class='menuButton'>ACCOUNT</button>
+                        <button type='button' class='menuButton mainMenuButton'>ACCOUNT</button>
                         <input type='hidden' name='account'>";
                         printSoundHiddenInput();
             echo "</form>";     
             echo "<form action='../login/login.php' method='POST'>
-                        <button type='button' class='menuButton'>LOGOUT</button>
+                        <button type='button' class='menuButton mainMenuButton'>LOGOUT</button>
                         <input type='hidden' name='logout'>";
                         printSoundHiddenInput();
             echo "</form>";     
 
         } else if (!$session) {
             echo "<form action='../login/login.php' method='POST'>
-                        <button type='button' class='menuButton'>BACK</button>";
+                        <button type='button' class='menuButton mainMenuButton'>BACK</button>";
                         printSoundHiddenInput();
             echo "</form>";     
         }     

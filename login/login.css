@@ -177,15 +177,10 @@ p, a, label{
 }
 /* BUTTONS*/
 .menuButton{
-    width: clamp(330px, 20%, 480px);
+    width: 100%;
     height: max(4vh, 50px);
     /*Font*/
     font-size: max(2vmax, 200%);
-}
-
-.menuButton{
-    width: 98% !important;
-    margin-left: 1% !important;
 }
 
 

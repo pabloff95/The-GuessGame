@@ -46,19 +46,19 @@ body{
 
 /*Buttons*/
 .menuButton{
-    /*width: max(35%, 500px);*/
     width: max(35%, 30vmax);
     min-width: 550px;
     height: max(6vh, 70px);
     margin:auto;    
     /*Font*/
-    font-family: var(--font);
     font-size: max(3vmax, 250%);
     /*Force text in 1 line*/
     overflow: hidden;
     white-space: nowrap;
 }
-
+.mainMenuButton{
+    margin: 0.5% auto !important;
+}
 /*Form inputs*/
 form input[type="text"], form input[type="email"]{
     width: max(35%, 500px);

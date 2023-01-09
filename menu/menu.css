@@ -57,7 +57,6 @@ body{
     margin:auto;    
     display:block;    
     /*Font*/
-    font-family: var(--font);
     font-size: max(3vmax, 250%);
     /*Force text in 1 line*/
     overflow: hidden;
@@ -68,10 +67,6 @@ body{
     margin-top: 0.2em;
     margin-bottom: 0.2em;
 }
-
-
-
-
 
 
 

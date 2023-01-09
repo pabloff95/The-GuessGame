@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GuessGame</title>
         <?php
         
@@ -36,28 +37,28 @@
                 <h1>CHOOSE LEVEL</h1>
                     <div id="difficulties">
                         <form name="difficulty" action="../game.php" method="POST">            
-                            <button type="button" class="menuButton" >EASY</button>    
+                            <button type="button" class="menuButton mainMenuButton" >EASY</button>    
                             <input type='hidden' name="level" value="3">
                             <?php printSoundHiddenInput(); ?>    
                         </form>
                         <form name="difficulty" action="../game.php" method="POST">            
-                            <button type="button" class="menuButton" >MEDIUM</button>            
+                            <button type="button" class="menuButton mainMenuButton" >MEDIUM</button>            
                             <input type='hidden' name="level" value="4">
                             <?php printSoundHiddenInput(); ?>    
                         </form>
                         <form name="difficulty" action="../game.php" method="POST">            
-                            <button type="button"  class="menuButton" >HARD</button>            
+                            <button type="button"  class="menuButton mainMenuButton" >HARD</button>            
                             <input type='hidden' name="level" value="5">
                             <?php printSoundHiddenInput(); ?>    
                         </form>
                         <form name="difficulty" action="../game.php" method="POST">            
-                            <button type="button"  class="menuButton" >EXTREME</button>            
+                            <button type="button"  class="menuButton mainMenuButton" >EXTREME</button>            
                             <input type='hidden' name="level" value="6">
                             <?php printSoundHiddenInput(); ?>    
                         </form>
                         </br>
                         <form action="../../menu/menu.php" method="POST">
-                            <button type="button" class="menuButton" >BACK</button>
+                            <button type="button" class="menuButton mainMenuButton" >BACK</button>
                             <input type='hidden' name="toMenu">
                             <?php
                             // Set hidden item with sound information

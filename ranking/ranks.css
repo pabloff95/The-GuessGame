@@ -19,7 +19,6 @@ body{
     transform: translateY(-50%);
     /*Size*/    
     width: clamp(700px, 60%, 900px);   
-    max-height: 99%;
     /*Center horizontally*/
     display: flex;
     justify-content: center;
@@ -114,6 +113,7 @@ table td{
 }
 .navButton:hover, .changeDiffButton:hover{
     background-color: var(--contrast1);    
+    cursor: pointer;
 }
 /*Change difficulty*/
 #title{
@@ -130,4 +130,16 @@ h1{
 .changeDiffButton{
     width: auto !important;
     border-radius: 5px !important;
+}
+
+@media all and (max-width: 768px){
+    #container{
+        height: fit-content;
+        padding: 5% 0;
+    }
+    #content{
+        top: unset;
+        margin-bottom: unset;
+        height: 100%;
+    }
 }

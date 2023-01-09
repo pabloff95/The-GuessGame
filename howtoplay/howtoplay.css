@@ -101,6 +101,5 @@ form{
     width: max(20%, 350px);
     height: max(4vh, 50px);
     /*Font*/
-    font-family: var(--font);
     font-size: max(2vmax, 200%);
 }

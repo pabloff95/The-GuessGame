@@ -6,23 +6,23 @@
 function menuForm(){
     echo "
     <form action='account.php' method='POST'>
-            <button type='button' class='menuButton'>CHANGE PASSWORD</button></br>
+            <button type='button' class='menuButton mainMenuButton'>CHANGE PASSWORD</button></br>
             <input type='hidden' name='changePass'>";
             printSoundHiddenInput();
     echo "</form>
         <form action='account.php' method='POST'>
-            <button type='button' class='menuButton'>CHANGE EMAIL</button></br>
+            <button type='button' class='menuButton mainMenuButton'>CHANGE EMAIL</button></br>
             <input type='hidden' name='newEmailButton'>";
             printSoundHiddenInput();
     echo "</form>
         <form action='account.php' method='POST'>
-            <button type='button' class='menuButton'>DELETE ACCOUNT</button></br>
+            <button type='button' class='menuButton mainMenuButton'>DELETE ACCOUNT</button></br>
             <input type='hidden' name='deleteAccount'>";
             printSoundHiddenInput();
     echo "</form>
         </br>
         <form action='../menu/menu.php' method='POST'>
-            <button type='button' class='menuButton'>BACK</button>
+            <button type='button' class='menuButton mainMenuButton'>BACK</button>
             <input type='hidden' name='toMenu'>";
             printSoundHiddenInput();
     echo "</form>";

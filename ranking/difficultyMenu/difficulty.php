@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GuessGame</title>
         <link rel="stylesheet" type="text/css" href="/guessgame/resources/styles/generalStyle.css">    
         <link rel="stylesheet" type="text/css" href="/guessgame/resources/styles/menuButton.css">
@@ -33,28 +34,28 @@
             <div id="content">
                 <h1>SELECT RANKING</h1>
                 <form action="../ranks.php" method="post">                                                           
-                    <button type="button" class="menuButton" >EASY</button><br>
+                    <button type="button" class="menuButton mainMenuButton" >EASY</button><br>
                     <input type='hidden' name='diff' value="easy">
                     <?php printSoundHiddenInput(); ?>
                 </form>
                 <form action="../ranks.php" method="post">                                                           
-                    <button type="button" class="menuButton" >MEDIUM</button><br>
+                    <button type="button" class="menuButton mainMenuButton" >MEDIUM</button><br>
                     <input type='hidden' name='diff' value="medium">
                     <?php printSoundHiddenInput(); ?>
                 </form>
                 <form action="../ranks.php" method="post">                                                           
-                    <button type="button" class="menuButton" >HARD</button><br>
+                    <button type="button" class="menuButton mainMenuButton" >HARD</button><br>
                     <input type='hidden' name='diff' value="hard">
                     <?php printSoundHiddenInput(); ?>
                 </form>
                 <form action="../ranks.php" method="post">                                                           
-                    <button type="button" class="menuButton" >EXTREME</button>
+                    <button type="button" class="menuButton mainMenuButton" >EXTREME</button>
                     <input type='hidden' name='diff' value="extreme">
                     <?php printSoundHiddenInput(); ?>
                 </form>
                 <br>
                 <form method="POST" action="../../menu/menu.php">
-                    <button type="button" name="toMenu" class="menuButton" >MENU</button>
+                    <button type="button" name="toMenu" class="menuButton mainMenuButton" >MENU</button>
                     <input type='hidden' name='toMenu'>
                     <?php printSoundHiddenInput(); ?>
                 </form>  

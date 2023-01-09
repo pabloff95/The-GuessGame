@@ -1,48 +1,49 @@
 /*STYLE AND ANIMATIONS APPLIED TO ALL MENU BUTTONS*/
     /*Initial aspect of the button*/
-.menuButton {
-    background-color: #fff;
-    z-index: 1;
-    position: relative;
-    overflow: hidden;
-    color: var(--frame1);
-    border: 3px solid var(--frame1);
-    background-color: var(--main1);;
-    padding: 10px 20px;
-    font-family: var(--font);
-    font-weight: 800;
-    font-size: 1.05em;
-    line-height: 0;
-    border-radius: 10px;
-    transition: transform .3s ease, color .5s ease, background-color .5s;
-}
-   /*"bubble" animation*/
-.menuButton::before {
-    content: '';
-    inset: 0 0 0 0;
-    margin: auto;
-    height: 0px;
-    width: 0px;    
-    position: absolute;
-    background-color: var(--contrast1);
-    z-index: -1;
-    border-radius: 50%;
-    transition: all .7s ease;
-}
-   
-   /*On mouse over button*/
-.menuButton:hover {
-    color: var(--frame1);    
-    background-color: var(--contrast1) !important;
-    border: 3px solid var(--frame1);
-    transition: all .7s ease;
-}
-   
-.menuButton:hover:before {
-    height: 1000px;
-    width: 1000px;    
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One'); 
+
+:root{
+    --button-main: #47ECAD;    
+    --button-contrast:#ED944D;
+    --black:#171717;
+    --white: #ffffff;
 }
 
+.menuButton {
+    position: relative;
+    /*font*/
+    font-family: 'Fjalla One',"Raleway", sans-serif !important;    
+    color: var(--black);
+    /*Colors*/   
+    /*background-color: var(--button-main);*/
+    background: linear-gradient(90deg,  var(--white) 45%, transparent 5%) right,
+                linear-gradient(90deg, var(--button-main) 45%, transparent 5%);
+    background-size: 250%;
+    /*Borders*/
+    border: 0.1em solid var(--black);
+    border-radius: 0.2em;
+
+    /*Other*/        
+    transition: .25s ease-out;
+    overflow: visible !important;    
+}
 .menuButton:hover{
-    transform: scale(1.1);
+    background-position: left;
+    color: var(--button-contrast);
+    border-color: var(--button-contrast); 
+}
+/*The buttons of the menu screens have extra features, buttons used in login form, for example, have a simpler version*/
+.mainMenuButton{
+    margin: 0.1% auto !important;
+    box-shadow: 0.05em 0.05em var(--black), 
+                0.06em 0.06em var(--black), 
+                0.07em 0.07em var(--black), 
+                0.08em 0.08em var(--black), 
+                0.09em 0.09em var(--black), 
+                0.1em 0.1em var(--black);
+}
+.mainMenuButton:active{
+    box-shadow: none;
+    top: 0.1em;
+    left: 0.1em;
 }

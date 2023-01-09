@@ -6,7 +6,7 @@ function connect(){
     $host = "";
     $user = "";
     $pass = "";
-    $db = ""; 
+    $db = "";
     // Connection
     $connection = mysqli_connect($host, $user, $pass, $db);
     return $connection;

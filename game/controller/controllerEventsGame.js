@@ -187,6 +187,7 @@ function nextRound(round){
 
 // Function to check if the gamer box has 4 pictures
 // Remove all <img> from the gamer box
+var colorChangeInteval;
 function checkRound(){  
     // Get the 4 boxes
     var boxes = document.getElementById("boxes");
@@ -203,9 +204,22 @@ function checkRound(){
             imgs++;
         }
     }
-    // if there are 4 imgs, it is possible to go to the next round
+    // if there are 4 imgs, it is possible to go to the next round --> enable "check" button + create color animation, through interval
+        // Always first: clear the interval (in case it exists)
+    if (typeof colorChangeInteval !== undefined) {
+        clearInterval(colorChangeInteval);
+        $("#enter").css("color", "rgb(109, 22, 1)")
+    }
     if (imgs == 4 ) {
         $("#enter").prop("disabled",false);
+        colorChangeInteval = setInterval(() => {
+            let enterButtonColor = $("#enter").css("color");            
+            if (enterButtonColor === "rgb(109, 22, 1)") {
+                $("#enter").css("color", "orange");
+            } else {
+                $("#enter").css("color", "rgb(109, 22, 1)")
+            }            
+        }, 1000);    
     }
 }
 
